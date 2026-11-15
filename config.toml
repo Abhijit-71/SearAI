@@ -1,0 +1,31 @@
+# searAI Configuration File
+# This file controls which search engines are enabled and their settings
+
+[server]
+port = 9000 # was for http will be used later for tcp
+timeout = "6s"
+static_dir = "static"
+# Results shown on the first page (aggregated across engines, after dedupe).
+default_size = 40
+
+[engines]
+# Enable or disable search engines by setting enabled = true/false
+# When disabled, the engine will not be loaded and won't return results
+
+[engines.duckduckgo]
+enabled = true
+priority = 1
+
+
+[engines.bing]
+enabled = false
+priority = 2
+
+# Google scraping is fragile (frequent CAPTCHAs); disabled by default.
+[engines.google]
+enabled = false
+priority = 2
+
+[engines.reddit]
+enabled = true
+priority = 3
